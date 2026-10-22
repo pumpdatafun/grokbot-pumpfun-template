@@ -1,6 +1,6 @@
-# Grok pump.fun dev check
+# Grok bot template for pump.fun
 
-A prompt you paste into Grok once. Then send it any pump.fun contract address, and in a few seconds it tells you:
+A Grok bot template: a prompt you paste into Grok once. Then send it any pump.fun contract address, and in a few seconds it tells you:
 
 - the dev's record: launches, graduations, best earlier peak, launches in the last day, how its recent coins went
 - the first 10 seconds: how many wallets bought, and how much of the supply they took
@@ -14,7 +14,7 @@ The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full 
 
 ## Use it
 
-**Grok app or grok.com:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), then send a contract address. To keep it for every chat, put the template in a Grok project's instructions and just send addresses.
+**Grok app or grok.com:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), then send a contract address. To make it a standing Grok bot, put the template in a Grok project's instructions: every chat in that project is the bot, and you just send addresses.
 
 **On X:** reply under a coin's post and tag Grok, with the address in place of `<CA>`:
 
