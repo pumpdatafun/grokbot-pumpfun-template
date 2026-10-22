@@ -22,10 +22,12 @@ Skill: pump.fun dev check
 
 When to use: whenever the user sends a pump.fun contract address (a Solana address, usually ending in "pump"), a ticker or coin name ("check $KIMCHI"), a dev's wallet, or asks to check a pump.fun coin, its dev, its odds or its buyers.
 
-Inputs and access: a contract address (CA), a ticker, or a wallet. No login, key or wallet of the user's. pumpdata.fun's free endpoints (the /free/ calls: 30 an hour per IP; a check uses two) and its public files (stats.json, coin, public/baserate.json: free, not counted):
+Inputs and access: a contract address (CA), a ticker, or a wallet. No login or wallet of the user's. pumpdata.fun's free endpoints (the /free/ calls; a check uses two) and its public files (stats.json, coin, public/baserate.json: free, not counted):
 - GET https://pumpdata.fun/free/launch/<CA>
 - GET https://pumpdata.fun/free/deployer/<deployer address>
 - only when asked: GET https://pumpdata.fun/stats.json, GET https://pumpdata.fun/coin?q=<ticker>, GET https://pumpdata.fun/public/baserate.json, POST https://pumpdata.fun/free/wallets
+
+Identity (every pumpdata.fun call): send the header x-agent-id with a string you made up once and keep in memory (16 to 128 letters, digits, '.', '_' or '-'; for example grokbot- followed by 12 random characters). That gives this Bot 100 free calls an hour of its own. The first time this skill runs, ask the user once: "May I sign up for a free pumpdata.fun API key with my own email? It gives 2,000 calls a day and adds a holders count to each check." With a yes: POST https://pumpdata.fun/keys with the JSON {"email": "<your own email>"}, open the email from pumpdata.fun and POST https://pumpdata.fun/keys/verify with the JSON {"t": "<the t= value from the link>"}; the answer holds the key. Keep it in memory (never in a description, a template or the chat) and from then on send it as the x-api-key header and call the same paths without /free/. With a no, or no email, the x-agent-id alone is enough; ask again only if the user brings it up.
 
 Steps:
 1. Fetch https://pumpdata.fun/free/launch/<CA> as JSON (in the terminal: curl -s https://pumpdata.fun/free/launch/<CA>; or open it in the browser). If it answers 404, say pumpdata.fun has no pump.fun launch with that address and stop.
@@ -52,7 +54,7 @@ B. A wallet address with "dev" or "check this dev" (not a CA): fetch https://pum
 C. "What are the odds?" or "base rate": fetch https://pumpdata.fun/public/baserate.json. Pick the band holding the coin's market cap in USD: the user's number if they give one, else close_mcap_usd from stats.json if the coin is listed there; with neither, ask for the market cap. Bands: 5k-10k, 10k-15k, 15k-20k, 20k-28k, 28k-40k, 40k-60k, 60k-100k, 100k-250k, 250k-1000k; above $1M there is no band, so say so. Return one line: ODDS: of the <crossed> coins that first traded at $<band> on <day>, <reached.2x> reached 2x within three hours, <reached.5x> 5x and <reached.10x> 10x; the median peak was <median_peak>x. That is what a random pick in the band did, not a forecast for this coin.
 D. "Who's buying?" with buyer addresses pasted (up to 50): POST https://pumpdata.fun/free/wallets with the JSON {"addresses": [...], "mint": "<CA>"} (curl -s -X POST -H 'content-type: application/json' -d '<json>' https://pumpdata.fun/free/wallets). One call. Return each wallet as its first and last 4 characters: class (winner, bot, supply seller, new, none), pnl_sol, coins; then the count by class. Supply sellers among the early buyers is the line that matters. With no addresses pasted, say the Bot can't see a coin's buyers itself and ask for them.
 
-Validation: every answer comes from calls made for this request, never from an earlier lookup, this conversation's history or memory (prices and holders move by the minute). Every number in the answer must be one of the fields above, written as the data has it (shares as percentages). A null is "not known yet", never a guess. If a call answers 429, do not retry in a loop. If the answer has get_a_key, the free allowance that cloud agents share is used up: tell the user, and offer to get a free key with your own email (ask first). With their OK, follow get_a_key's steps, keep the key in your memory (never in a description or a template, never shown in chat), and from then on call the same paths without /free/ with the x-api-key header: 100 calls an hour, and /launch then also answers holders (add a HOLDERS line after DEV: <holders> wallets hold it). Without get_a_key, say the free hour is used up and to try again later.
+Validation: every answer comes from calls made for this request, never from an earlier lookup, this conversation's history or memory (prices and holders move by the minute). Every number in the answer must be one of the fields above, written as the data has it (shares as percentages). A null is "not known yet", never a guess. If a call answers 429, do not retry in a loop: say what it said (retry_after_s is how long to wait). If the answer has get_a_key and you have no key yet, offer the key sign-up above (ask first). With a key, /launch also answers holders: add a HOLDERS line after DEV: <holders> wallets hold it. If a keyed call answers 429 with key_limit, the day's budget is used: say so, and that a note to the email the key came from gets more.
 
 Return, in this shape and nothing more:
 DEV: <launches> launches, <graduations> graduated, best earlier peak $<best_peak_usd>, <launches_last_day> launched in the last day. Of its last-90-day launches, <dead_share> were dead the next day.
@@ -70,7 +72,7 @@ Needs approval: nothing; the skill only reads pumpdata.fun's public endpoints. I
 
 ## A routine (optional, not in the shared template)
 
-To watch coins you hold, ask the Bot: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed: <CA>, <CA>."* Routines need to be at least five minutes apart, and each check uses two of the 30 free calls an hour.
+To watch coins you hold, ask the Bot: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed: <CA>, <CA>."* Routines need to be at least five minutes apart, and each check uses two of the Bot's 100 free calls an hour (2,000 a day with its key).
 
 ## Make it a template
 
