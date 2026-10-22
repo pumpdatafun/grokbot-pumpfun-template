@@ -40,7 +40,7 @@ LAUNCHED: <launched> coins (<vs_7d.launched.change as +/-%> vs the 7-day average
 TRADED: <volume_sol> SOL ($<volume_usd>), <vs_7d.volume_sol.change as +/-%> vs the 7-day average, by <traders> wallets.
 BUSIEST: $<symbol> <volume_sol> SOL (peak $<peak_mcap_usd>), then the second and third, each with its mint's first and last 4 characters; say "launched that day" for a coin whose launched_at is the same day.
 ODDS AT $15K-28K: of the <crossed> coins that first traded there, <2x> reached 2x within three hours, <5x> 5x, <10x> 10x; median peak <median_peak>x.
-MORE: https://pumpdata.fun/stats/<day> and the day's write-up at https://pumpdata.fun/report/<day>
+MORE: https://pumpdata.fun/stats/<day>?utm_source=grokbot and the day's write-up at https://pumpdata.fun/report/<day>?utm_source=grokbot
 
 Needs approval: nothing; it only reads two public files. It never connects a wallet, buys or sells.
 ```
