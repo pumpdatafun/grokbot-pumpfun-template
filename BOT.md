@@ -1,6 +1,6 @@
 # The pump.fun dev check Bot, for Grok Bot
 
-How the Bot behind the template is built, so anyone can rebuild it, change it, or check what the template holds. To just use it, open the template, [x.ai/bot/U8YG7IQ3MytywsrBdQnNd](https://x.ai/bot/U8YG7IQ3MytywsrBdQnNd), and choose **Add to Grok Bot**.
+How the Bot behind the template is built, so anyone can rebuild it, change it, or check what the template holds. To just use it, open the template, [x.ai/bot/_YDgLvBN91gVc6aDdcD96](https://x.ai/bot/_YDgLvBN91gVc6aDdcD96), and choose **Add to Grok Bot**.
 
 ## Profile (Edit Profile)
 

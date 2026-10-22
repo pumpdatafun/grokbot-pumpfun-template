@@ -1,6 +1,6 @@
 # Grok bot template for pump.fun
 
-**Add it to Grok Bot:** [x.ai/bot/U8YG7IQ3MytywsrBdQnNd](https://x.ai/bot/U8YG7IQ3MytywsrBdQnNd), then choose **Add to Grok Bot**.
+**Add it to Grok Bot:** [x.ai/bot/_YDgLvBN91gVc6aDdcD96](https://x.ai/bot/_YDgLvBN91gVc6aDdcD96), then choose **Add to Grok Bot**.
 
 "pump.fun dev check" is a Grok Bot. Send it any pump.fun contract address, and in a few seconds it tells you:
 
@@ -17,7 +17,7 @@ The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full 
 ## Use it
 
 **Grok Bot:**
-1. Open the [template](https://x.ai/bot/U8YG7IQ3MytywsrBdQnNd).
+1. Open the [template](https://x.ai/bot/_YDgLvBN91gVc6aDdcD96).
 2. Choose **Add to Grok Bot**, then **Add Bot** in the Grok Bot app. You get your own copy, with none of our memory, logins or chats.
 3. Send it a contract address.
 
