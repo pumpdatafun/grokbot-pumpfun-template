@@ -1,5 +1,7 @@
 # The pump.fun daily Bot, for Grok Bot
 
+**Add it to Grok Bot:** [x.ai/bot/Cog-D_HjN4wAK_3arFAWM](https://x.ai/bot/Cog-D_HjN4wAK_3arFAWM), then choose **Add to Grok Bot** and ask it to send you yesterday on pump.fun every morning.
+
 A second Bot with one job: every morning, yesterday on pump.fun in six lines, from pumpdata.fun's daily tables. Build it the same way as the dev check (see [BOT.md](BOT.md)), then share it from its Share menu with **Create template** and **Public link**.
 
 ## Profile (Edit Profile)

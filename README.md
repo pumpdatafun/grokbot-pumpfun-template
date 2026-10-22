@@ -29,7 +29,7 @@ It also takes:
 
 The default check stays two of the 30 free calls an hour. The ticker and odds lookups don't count against the limit.
 
-For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own. A second Bot, [BOT-DAILY.md](BOT-DAILY.md), sends yesterday on pump.fun every morning: launches, graduations, volume, the busiest coins and the odds.
+For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own. A second Bot, **pump.fun daily** ([add it](https://x.ai/bot/Cog-D_HjN4wAK_3arFAWM); its build is [BOT-DAILY.md](BOT-DAILY.md)), sends yesterday on pump.fun every morning: launches, graduations, volume, the busiest coins and the odds.
 
 **Grok chat (the Grok app or grok.com), ChatGPT or Claude:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), and send a contract address. To use it in every chat, put it in a project's instructions.
 
