@@ -10,7 +10,7 @@
 - how launches that looked like this one went in their first day
 - which of your skip rules fire
 
-It's the manual "copy the CA, open the creator, check the dev" routine, done from every pump.fun trade since pump.fun's first day. No API key, no wallet connected, no signup. 30 checks an hour free.
+It's the manual "copy the CA, open the creator, check the dev" routine, done from every pump.fun trade since pump.fun's first day. No API key, no wallet connected, no signup. 300 lookups a day free.
 
 The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full guide is at **[pumpdata.fun/pump-fun-grok-check](https://pumpdata.fun/pump-fun-grok-check)**.
 
@@ -25,9 +25,9 @@ It also takes:
 - **a ticker:** "check $KIMCHI". It finds the coin among yesterday's busiest or the graduates, and asks which one when several share the ticker.
 - **a dev's wallet:** "check this dev", with that dev's record and recent launches.
 - **"what are the odds?":** how often coins at that market cap reached 2x, 5x and 10x yesterday.
-- **"who's buying?":** paste up to 50 buyer wallets to see each one's class: winner, bot, supply seller or new.
+- **"who's buying?":** paste up to 50 buyer wallets to see each one's class: winner, net loser, bot, supply seller or new.
 
-The default check stays two of the 30 free calls an hour. The ticker and odds lookups don't count against the limit.
+The default check uses two of the 300 free lookups a day. The ticker and odds lookups don't count against the limit.
 
 For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own. A second Bot, **pump.fun daily** ([add it](https://x.ai/bot/Cog-D_HjN4wAK_3arFAWM); its build is [BOT-DAILY.md](BOT-DAILY.md)), sends yesterday on pump.fun every morning: launches, graduations, volume, the busiest coins and the odds.
 
