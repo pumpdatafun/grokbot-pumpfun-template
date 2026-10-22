@@ -24,6 +24,8 @@ The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full 
 
 **ChatGPT or Claude:** the same template works. Paste it into a new chat or a project's instructions.
 
+**As a Grok Bot:** [BOT.md](BOT.md) has the whole "pump.fun dev check" Bot: its profile, the skill, an optional routine, and how to share it as a template. Give the file to your Grok Bot and ask it to set the Bot up.
+
 **In code:** the same calls as a Python or TypeScript function are on [pumpdata.fun/pump-fun-trading-agent](https://pumpdata.fun/pump-fun-trading-agent).
 
 ## What an answer looks like
