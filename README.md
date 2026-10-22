@@ -40,7 +40,8 @@ FLAGS:
 - NEVER RAN: 35 launches, best earlier peak $7,980.09.
 - INSIDERS: 74.9% held by the dev and the first-10-second wallets.
 - LOOK-ALIKES DIE: 120 of 122 dead by day one.
-- (note) BOUGHT OUT AT LAUNCH: 79.3% in the first 10 seconds, migrated 1 second after the create.
+NOTES:
+- BOUGHT OUT AT LAUNCH: 79.3% in the first 10 seconds, migrated 1 second after the create.
 RULES SAY: skip. This is a check of what the chain shows, not advice.
 Can't see: who funded the dev wallet, or the dev's X account.
 ```

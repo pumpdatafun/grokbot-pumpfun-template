@@ -46,7 +46,8 @@ Return, in this shape and nothing more:
 DEV: <launches> launches, <graduations> graduated, best earlier peak $<best_peak_usd>, <launches_last_day> launched in the last day. Of its last-90-day launches, <dead_share> were dead the next day.
 FIRST 10 SECONDS: <buyers_first_10s> wallets bought <supply_share> of the supply. Insiders (dev + those wallets) hold <insider_supply_share> now.
 LOOK-ALIKES: <matches.n> launches looked like this one at the same age; <matches.peak_day1.dead> of them were dead by day one; their median peak was <p50>x.
-FLAGS: each rule that fired, one line each, or "none".
+FLAGS: each flag rule that fired, one line each, or "none". The two notes (LAUNCH SERVICE, BOUGHT OUT AT LAUNCH) never go here.
+NOTES: each note that applies, one line each; leave the line out when none does.
 RULES SAY: "skip" if any flag fired, else "no flags: your call". This is a check of what the chain shows, not advice.
 CAN'T SEE: who funded the dev wallet, the dev's X account, and a fresh wallet's history (a dev with 1 launch proves nothing; the first 10 seconds and the look-alikes matter more then).
 
