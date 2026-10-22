@@ -1,6 +1,8 @@
 # Grok bot template for pump.fun
 
-A Grok bot template: a prompt you paste into Grok once. Then send it any pump.fun contract address, and in a few seconds it tells you:
+**Add it to Grok Bot:** [x.ai/bot/U8YG7IQ3MytywsrBdQnNd](https://x.ai/bot/U8YG7IQ3MytywsrBdQnNd), then choose **Add to Grok Bot**.
+
+"pump.fun dev check" is a Grok Bot. Send it any pump.fun contract address, and in a few seconds it tells you:
 
 - the dev's record: launches, graduations, best earlier peak, launches in the last day, how its recent coins went
 - the first 10 seconds: how many wallets bought, and how much of the supply they took
@@ -14,17 +16,20 @@ The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full 
 
 ## Use it
 
-**Grokbot app, Grok app or grok.com:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), then send a contract address. To make it a standing Grok bot, put the template in a Grok project's instructions: every chat in that project is the bot, and you just send addresses.
+**Grok Bot:**
+1. Open the [template](https://x.ai/bot/U8YG7IQ3MytywsrBdQnNd).
+2. Choose **Add to Grok Bot**, then **Add Bot** in the Grok Bot app. You get your own copy, with none of our memory, logins or chats.
+3. Send it a contract address.
+
+For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own.
+
+**Grok chat (the Grok app or grok.com), ChatGPT or Claude:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), and send a contract address. To use it in every chat, put it in a project's instructions.
 
 **On X:** reply under a coin's post and tag Grok, with the address in place of `<CA>`:
 
 ```
 @grok check this pump.fun coin: open https://pumpdata.fun/free/launch/<CA> and tell me the dev's launches and graduations, how much of the supply went in the first 10 seconds, and how launches that looked like it went
 ```
-
-**ChatGPT or Claude:** the same template works. Paste it into a new chat or a project's instructions.
-
-**As a Grok Bot:** [BOT.md](BOT.md) has the whole "pump.fun dev check" Bot: its profile, the skill, an optional routine, and how to share it as a template. Give the file to your Grok Bot and ask it to set the Bot up.
 
 **In code:** the same calls as a Python or TypeScript function are on [pumpdata.fun/pump-fun-trading-agent](https://pumpdata.fun/pump-fun-trading-agent).
 
