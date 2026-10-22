@@ -20,11 +20,12 @@ Start a conversation with the Bot, paste this, and send one contract address to 
 ```
 Skill: pump.fun dev check
 
-When to use: whenever the user sends a pump.fun contract address (a Solana address, usually ending in "pump"), or asks to check a pump.fun coin or its dev.
+When to use: whenever the user sends a pump.fun contract address (a Solana address, usually ending in "pump"), a ticker or coin name ("check $KIMCHI"), a dev's wallet, or asks to check a pump.fun coin, its dev, its odds or its buyers.
 
-Inputs and access: the contract address (CA). No login, key or wallet. Two free endpoints from pumpdata.fun (30 calls an hour per IP; a check uses two):
+Inputs and access: a contract address (CA), a ticker, or a wallet. No login, key or wallet of the user's. pumpdata.fun's free endpoints (the /free/ calls: 30 an hour per IP; a check uses two) and its public files (stats.json, coin, public/baserate.json: free, not counted):
 - GET https://pumpdata.fun/free/launch/<CA>
 - GET https://pumpdata.fun/free/deployer/<deployer address>
+- only when asked: GET https://pumpdata.fun/stats.json, GET https://pumpdata.fun/coin?q=<ticker>, GET https://pumpdata.fun/public/baserate.json, POST https://pumpdata.fun/free/wallets
 
 Steps:
 1. Fetch https://pumpdata.fun/free/launch/<CA> as JSON (in the terminal: curl -s https://pumpdata.fun/free/launch/<CA>; or open it in the browser). If it answers 404, say pumpdata.fun has no pump.fun launch with that address and stop.
@@ -40,6 +41,15 @@ Steps:
    - LOOK-ALIKES DIE: 20+ look-alikes and 90% or more of them dead by day one.
    - DEV'S COINS DIE: 5+ of the dev's last-90-day launches measured and 80% or more of them dead the next day.
 
+Other requests (only when the user asks for them; the dev check stays two calls):
+A. A ticker or name instead of a CA ("check $KIMCHI"):
+   1. Fetch https://pumpdata.fun/stats.json and look in coins.top_volume, coins.top_peak and coins.biggest_launches for a symbol or name that matches, ignoring case and the $. These are yesterday's (UTC) busiest coins, new launches included.
+   2. If none matches, fetch https://pumpdata.fun/coin?q=<ticker>&limit=10. It covers coins that completed their curve, up to the weekly tables' date, newest first.
+   3. One match: run the dev check on its mint. Several: list up to five (symbol, name, created, the dev's launches, first-day peak, the mint's first and last 4 characters) and ask which one; never pick for the user. None: ask for the contract address, and say a coin launched in the last day or two, or one that never graduated, may not be in the ticker lookup yet.
+B. A wallet address with "dev" or "check this dev" (not a CA): fetch https://pumpdata.fun/free/deployer/<address> only (one call). Return the DEV line, its recent_launches (up to five: created, market cap at 5 min, 24 h peak multiple, dead next day), and whichever of SERIAL LAUNCHER, NEVER RAN and DEV'S COINS DIE fire.
+C. "What are the odds?" or "base rate": fetch https://pumpdata.fun/public/baserate.json. Pick the band holding the coin's market cap in USD: the user's number if they give one, else close_mcap_usd from stats.json if the coin is listed there; with neither, ask for the market cap. Bands: 5k-10k, 10k-15k, 15k-20k, 20k-28k, 28k-40k, 40k-60k, 60k-100k, 100k-250k, 250k-1000k; above $1M there is no band, so say so. Return one line: ODDS: of the <crossed> coins that first traded at $<band> on <day>, <reached.2x> reached 2x within three hours, <reached.5x> 5x and <reached.10x> 10x; the median peak was <median_peak>x. That is what a random pick in the band did, not a forecast for this coin.
+D. "Who's buying?" with buyer addresses pasted (up to 50): POST https://pumpdata.fun/free/wallets with the JSON {"addresses": [...], "mint": "<CA>"} (curl -s -X POST -H 'content-type: application/json' -d '<json>' https://pumpdata.fun/free/wallets). One call. Return each wallet as its first and last 4 characters: class (winner, bot, supply seller, new, none), pnl_sol, coins; then the count by class. Supply sellers among the early buyers is the line that matters. With no addresses pasted, say the Bot can't see a coin's buyers itself and ask for them.
+
 Validation: every number in the answer must be one of the fields above, written as the data has it (shares as percentages). A null is "not known yet", never a guess. If a call answers 429, say the free hour is used up and to try again later; do not retry in a loop.
 
 Return, in this shape and nothing more:
@@ -51,7 +61,9 @@ NOTES: each note that applies, one line each; leave the line out when none does.
 RULES SAY: "skip" if any flag fired, else "no flags: your call". This is a check of what the chain shows, not advice.
 CAN'T SEE: who funded the dev wallet, the dev's X account, and a fresh wallet's history (a dev with 1 launch proves nothing; the first 10 seconds and the look-alikes matter more then).
 
-Needs approval: nothing; the skill only reads two public pages. It never connects a wallet, signs, buys or sells, and never asks the user for keys, seed phrases or logins.
+Return for A to D: the shape each one gives above, short, then nothing more.
+
+Needs approval: nothing; the skill only reads pumpdata.fun's public endpoints. It never connects a wallet, signs, buys or sells, and never asks the user for keys, seed phrases or logins.
 ```
 
 ## A routine (optional, not in the shared template)

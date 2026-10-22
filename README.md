@@ -21,7 +21,15 @@ The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full 
 2. Choose **Add to Grok Bot**, then **Add Bot** in the Grok Bot app. You get your own copy, with none of our memory, logins or chats.
 3. Send it a contract address.
 
-For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own.
+It also takes:
+- **a ticker:** "check $KIMCHI". It finds the coin among yesterday's busiest or the graduates, and asks which one when several share the ticker.
+- **a dev's wallet:** "check this dev", with that dev's record and recent launches.
+- **"what are the odds?":** how often coins at that market cap reached 2x, 5x and 10x yesterday.
+- **"who's buying?":** paste up to 50 buyer wallets to see each one's class: winner, bot, supply seller or new.
+
+The default check stays two of the 30 free calls an hour. The ticker and odds lookups don't count against the limit.
+
+For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own. A second Bot, [BOT-DAILY.md](BOT-DAILY.md), sends yesterday on pump.fun every morning: launches, graduations, volume, the busiest coins and the odds.
 
 **Grok chat (the Grok app or grok.com), ChatGPT or Claude:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), and send a contract address. To use it in every chat, put it in a project's instructions.
 
