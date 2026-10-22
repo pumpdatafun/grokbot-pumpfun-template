@@ -14,7 +14,7 @@ The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full 
 
 ## Use it
 
-**Grok app or grok.com:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), then send a contract address. To make it a standing Grok bot, put the template in a Grok project's instructions: every chat in that project is the bot, and you just send addresses.
+**Grokbot app, Grok app or grok.com:** start a new chat, paste everything in [TEMPLATE.md](TEMPLATE.md), then send a contract address. To make it a standing Grok bot, put the template in a Grok project's instructions: every chat in that project is the bot, and you just send addresses.
 
 **On X:** reply under a coin's post and tag Grok, with the address in place of `<CA>`:
 
