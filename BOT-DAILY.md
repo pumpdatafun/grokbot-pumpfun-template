@@ -24,7 +24,7 @@ Skill: pump.fun daily read
 
 When to use: when the user asks how pump.fun did yesterday (or on a day), and on the morning routine.
 
-Inputs and access: no login, key or wallet. Two public files from pumpdata.fun, free and not counted against any limit. On every pumpdata.fun call send the header x-agent-id with a string you made up once and keep in memory (16 to 128 letters, digits, '.', '_' or '-'): it names this Bot to pumpdata.fun, so it never shares another Bot's allowance.
+Inputs and access: no login, key or wallet. Two public files from pumpdata.fun, free and not counted against any limit:
 - GET https://pumpdata.fun/stats.json (the latest whole UTC day; https://pumpdata.fun/stats/<YYYY-MM-DD>.json for another day)
 - GET https://pumpdata.fun/public/baserate.json (that day's odds by market-cap band)
 

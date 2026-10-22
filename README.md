@@ -88,7 +88,7 @@ For a fresh wallet, the first 10 seconds and the look-alike launches are the par
 
 ## Limits
 
-The Bot sends an `x-agent-id` header it makes up once and keeps, which gives it 100 free calls an hour of its own (a check uses two); Bots that don't share one pool. The dev check Bot also offers, the first time it runs, to sign up for a free API key with its own email: 2,000 calls a day, and `/launch` then adds the coin's holders. Past that, the same paths pay per call in USDC over x402, with no account. Nothing here costs anything.
+30 free calls every five minutes under `/free/` (a check uses two); Grok Bots share that allowance between them, since their computers share addresses. So the dev check Bot offers, the first time it runs, to sign up for a free API key with its own email: 2,000 calls and 2,000 wallet lookups a day of its own, and `/launch` then adds the coin's holders. Past that, the same paths pay per call in USDC over x402, with no account. Nothing here costs anything.
 
 Numbers from every pump.fun trade, ever. Not advice, and never a verdict on a coin. Not affiliated with pump.fun.
 
