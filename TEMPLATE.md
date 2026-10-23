@@ -23,4 +23,4 @@ The rules:
 
 Then one line on what this cannot see: who funded the dev wallet, the dev's X account, and a fresh wallet's history (a dev with 1 launch proves nothing; lean on the first 10 seconds and the look-alikes then).
 
-The numbers are pumpdata.fun's (every pump.fun trade, ever), free for 30 calls every five minutes. If a call answers 429, tell me the free calls are used up and to try again in five minutes.
+The numbers are pumpdata.fun's (every pump.fun trade, ever), free for 30 calls every five minutes and 300 a day, an allowance every Grok Bot and cloud agent shares. If a call answers 429, tell me the free calls are used up for now and to try again in retry_after_s seconds (a minute when the answer has none). If a call answers 402 with free_tier, tell me the free lookups for the day are used up: they come back in free_tier.resets_in_s seconds, or a free key (https://pumpdata.fun/keys) gives 2,000 calls a day of its own.

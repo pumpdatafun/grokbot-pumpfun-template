@@ -10,7 +10,7 @@
 - how launches that looked like this one went in their first day
 - which of your skip rules fire
 
-It's the manual "copy the CA, open the creator, check the dev" routine, done from every pump.fun trade since pump.fun's first day. No API key, no wallet connected, no signup. 300 lookups a day free.
+It's the manual "copy the CA, open the creator, check the dev" routine, done from every pump.fun trade since pump.fun's first day. No API key, no wallet connected, no signup. 300 lookups a day free, shared by every Grok Bot and cloud agent.
 
 The data comes from [pumpdata.fun](https://pumpdata.fun)'s free calls. The full guide is at **[pumpdata.fun/pump-fun-grok-check](https://pumpdata.fun/pump-fun-grok-check)**.
 
@@ -27,7 +27,7 @@ It also takes:
 - **"what are the odds?":** how often coins at that market cap reached 2x, 5x and 10x yesterday.
 - **"who's buying?":** paste up to 50 buyer wallets to see each one's class: winner, net loser, bot, supply seller or new.
 
-The default check uses two of the 300 free lookups a day. The ticker and odds lookups don't count against the limit.
+The default check uses two of the 300 free lookups a day, which every Grok Bot and cloud agent shares. The ticker and odds lookups don't count against the limit.
 
 For a daily watch on coins you hold, ask it: *"Every day at 9:00 AM, run the pump.fun dev check skill on these contract addresses and tell me only what changed."* [BOT.md](BOT.md) is the Bot's whole build (its description, its skill, its rules), to read before adding it or to build your own. A second Bot, **pump.fun daily** ([add it](https://x.ai/bot/Cog-D_HjN4wAK_3arFAWM); its build is [BOT-DAILY.md](BOT-DAILY.md)), sends yesterday on pump.fun every morning: launches, graduations, volume, the busiest coins and the odds.
 
@@ -88,7 +88,7 @@ For a fresh wallet, the first 10 seconds and the look-alike launches are the par
 
 ## Limits
 
-30 free calls every five minutes under `/free/` (a check uses two); Grok Bots share that allowance between them, since their computers share addresses. So the dev check Bot offers, the first time it runs, to sign up for a free API key with its own email: 2,000 calls and 2,000 wallet lookups a day of its own, and `/launch` then adds the coin's holders. Past that, the same paths pay per call in USDC over x402, with no account. Nothing here costs anything.
+30 free calls every five minutes and 300 a day under `/free/` (a check uses two); Grok Bots share that allowance between them, since their computers share addresses. So the dev check Bot offers, the first time it runs, to sign up for a free API key with its own email: 2,000 calls and 2,000 wallet lookups a day of its own, and `/launch` then adds the coin's holders. Past that, the same paths pay per call in USDC over x402, with no account. Nothing here costs anything.
 
 Numbers from every pump.fun trade, ever. Not advice, and never a verdict on a coin. Not affiliated with pump.fun.
 
