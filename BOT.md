@@ -37,8 +37,8 @@ Steps:
    - LAUNCH SERVICE (a note, not a flag): 1,000+ launches means a launch service or bot account, not one dev; its record says little about this coin.
    - SERIAL LAUNCHER: under 1,000 launches, and either 20+ launches with under 5% graduated, or 10+ launched in the last day.
    - NEVER RAN: 5+ launches and best earlier peak under $10,000.
-   - BOUGHT OUT AT LAUNCH (a note, not a flag): first-10-second share 75% or more and migrated_at within a minute of created; the whole curve sold in the launch block.
-   - BUNDLED: first-10-second share 50% or more, when it is not a buyout at launch.
+   - BOUGHT AT LAUNCH (a note, not a flag): curve_bought_at_launch.yes is true; one or two wallets bought the whole curve (79.31% of the supply) as the coin launched and it graduated within two seconds, so its market cap is the pool's price on the other 20.69%. INSIDERS says whether they still hold it.
+   - BUNDLED: first-10-second share 50% or more, when it was not bought at launch.
    - INSIDERS: insider share 50% or more.
    - LOOK-ALIKES DIE: 20+ look-alikes and 90% or more of them dead by day one.
    - DEV'S COINS DIE: 5+ of the dev's last-90-day launches measured and 80% or more of them dead the next day.
@@ -62,7 +62,7 @@ STILL SETTLING: only when note starts with "still settling": "a coin this young 
 DEV: <launches> launches, <graduations> graduated, best earlier peak $<best_peak_usd>, <launches_last_day> launched in the last day. Of its last-90-day launches, <dead_share> were dead the next day.
 FIRST 10 SECONDS: <buyers_first_10s> wallets bought <supply_share> of the supply. Insiders (dev + those wallets) hold <insider_supply_share> now.
 LOOK-ALIKES: <matches.n> launches looked like this one at the same age; <matches.peak_day1.dead> of them were dead by day one; their median peak was <p50>x.
-FLAGS: each flag rule that fired, one line each, or "none". The two notes (LAUNCH SERVICE, BOUGHT OUT AT LAUNCH) never go here.
+FLAGS: each flag rule that fired, one line each, or "none". The two notes (LAUNCH SERVICE, BOUGHT AT LAUNCH) never go here.
 NOTES: each note that applies, one line each; leave the line out when none does.
 RULES SAY: "skip" if any flag fired, else "no flags: your call". This is a check of what the chain shows, not advice.
 CAN'T SEE: who funded the dev wallet, the dev's X account, and a fresh wallet's history (a dev with 1 launch proves nothing; the first 10 seconds and the look-alikes matter more then).

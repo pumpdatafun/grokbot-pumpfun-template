@@ -54,7 +54,7 @@ FLAGS:
 - INSIDERS: 74.9% held by the dev and the first-10-second wallets.
 - LOOK-ALIKES DIE: 120 of 122 dead by day one.
 NOTES:
-- BOUGHT OUT AT LAUNCH: 79.3% in the first 10 seconds, migrated 1 second after the create.
+- BOUGHT AT LAUNCH: 2 wallets bought the whole curve (79.3%) as it launched; it graduated 1 second later.
 RULES SAY: skip. This is a check of what the chain shows, not advice.
 Can't see: who funded the dev wallet, or the dev's X account.
 ```
@@ -69,14 +69,14 @@ They're plain text in the template. Change the numbers to your own.
 |---|---|
 | Serial launcher | under 1,000 launches, and 20+ launches with under 5% graduated, or 10+ launched in the last day |
 | Never ran | 5+ launches and best earlier peak under $10,000 |
-| Bundled | 50%+ of the supply bought in the first 10 seconds, unless it was bought out at launch |
+| Bundled | 50%+ of the supply bought in the first 10 seconds, unless it was bought at launch |
 | Insiders | the dev and the first-10-second wallets hold 50%+ now |
 | Look-alikes die | 20+ look-alike launches and 90%+ of them dead by day one |
 | Dev's coins die | 5+ of the dev's last-90-day launches measured and 80%+ dead the next day |
 
 Two notes, not flags:
 - **Launch service:** 1,000+ launches usually means a launch service or bot account, not one dev.
-- **Bought out at launch:** 75%+ bought in the first 10 seconds and migrated within a minute means the whole curve sold in the launch block.
+- **Bought at launch:** `curve_bought_at_launch.yes` from pumpdata.fun: one or two wallets bought the whole curve (79.31% of the supply) as the coin launched and it graduated within two seconds. Its market cap is the pool's price on the other 20.69%; a quarter of graduates since July 2026 launch this way ([the research](https://pumpdata.fun/research/pump-fun-graduates-bought-at-launch)).
 
 ## What it can't see
 

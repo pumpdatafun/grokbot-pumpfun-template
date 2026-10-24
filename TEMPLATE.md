@@ -15,8 +15,8 @@ The rules:
 - LAUNCH SERVICE (a note, not a flag): 1,000+ launches means a launch service or bot account, not one dev. Say so; its record says little about this coin.
 - SERIAL LAUNCHER: under 1,000 launches, and either 20+ launches with under 5% graduated, or 10+ launched in the last day.
 - NEVER RAN: 5+ launches and best earlier peak under $10,000.
-- BOUGHT OUT AT LAUNCH (a note, not a flag): first-10-second share 75% or more and migrated_at within a minute of created. The whole curve sold in the launch block; whoever bought it there sets the price.
-- BUNDLED: first-10-second share 50% or more, when it is not a buyout at launch.
+- BOUGHT AT LAUNCH (a note, not a flag): curve_bought_at_launch.yes is true. One or two wallets bought the whole curve (79.31% of the supply) as the coin launched and it graduated within two seconds; its market cap is the pool's price on the other 20.69%. INSIDERS says whether they still hold it.
+- BUNDLED: first-10-second share 50% or more, when it was not bought at launch.
 - INSIDERS: insider share 50% or more.
 - LOOK-ALIKES DIE: 20+ look-alikes and 90% or more of them dead by day one.
 - DEV'S COINS DIE: 5+ of the dev's last-90-day launches measured and 80% or more of them dead the next day.
