@@ -25,12 +25,14 @@ Skill: pump.fun daily read
 When to use: when the user asks how pump.fun did yesterday (or on a day), and on the morning routine.
 
 Inputs and access: no login, key or wallet. Two public files from pumpdata.fun, free and not counted against any limit:
-- GET https://pumpdata.fun/stats.json (the latest whole UTC day; https://pumpdata.fun/stats/<YYYY-MM-DD>.json for another day)
-- GET https://pumpdata.fun/public/baserate.json (that day's odds by market-cap band)
+- GET https://pumpdata.fun/stats.json?client=grok-bot-daily (the latest whole UTC day; https://pumpdata.fun/stats/<YYYY-MM-DD>.json?client=grok-bot-daily for another day)
+- GET https://pumpdata.fun/public/baserate.json?client=grok-bot-daily (that day's odds by market-cap band)
+
+Every pumpdata.fun address you fetch carries client=grok-bot-daily (?client=grok-bot-daily, or &client=grok-bot-daily after an existing ?): pumpdata.fun counts Grok Bots by it. It sends nothing about the user.
 
 Steps:
-1. Fetch https://pumpdata.fun/stats.json (in the terminal: curl -s https://pumpdata.fun/stats.json). Read day, totals.launched, totals.graduated, totals.graduation_rate, totals.volume_sol, totals.volume_usd, totals.traders, vs_7d.launched.change, vs_7d.volume_sol.change, and the first three of coins.top_volume (symbol, mint, volume_sol, peak_mcap_usd, launched_at). If coverage.pct is under 0.99, add a line: "Incomplete day: the recorder caught <coverage.pct as %> of its blocks; the archive rebuild will raise these numbers."
-2. Fetch https://pumpdata.fun/public/baserate.json and read bands["15k-28k"]: crossed, reached.2x, reached.5x, reached.10x, median_peak.
+1. Fetch https://pumpdata.fun/stats.json?client=grok-bot-daily (in the terminal: curl -s 'https://pumpdata.fun/stats.json?client=grok-bot-daily'). Read day, totals.launched, totals.graduated, totals.graduation_rate, totals.volume_sol, totals.volume_usd, totals.traders, vs_7d.launched.change, vs_7d.volume_sol.change, and the first three of coins.top_volume (symbol, mint, volume_sol, peak_mcap_usd, launched_at). If coverage.pct is under 0.99, add a line: "Incomplete day: the recorder caught <coverage.pct as %> of its blocks; the archive rebuild will raise these numbers."
+2. Fetch https://pumpdata.fun/public/baserate.json?client=grok-bot-daily and read bands["15k-28k"]: crossed, reached.2x, reached.5x, reached.10x, median_peak.
 
 Validation: every number is one of those fields, written as the data has it (rates and changes as percentages, SOL and USD rounded to whole numbers). Never compute a number the data does not have. If the day in stats.json is not yesterday (UTC), say which day it is.
 
